@@ -28,74 +28,74 @@ document.addEventListener('DOMContentLoaded', () => {
     // Temple data
     const temples = [
         {
-            templeName: "Aba Nigeria",
+            templeName: "Aba Nigeria Temple",
             location: "Aba, Nigeria",
-            dedicated: "2005, August, 7",
+            dedicated: "7, August, 2005 ",
             area: 11500,
-            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg"
+            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba_nigeria_temple-lds-273999-wallpaper.jpg"
         },
         {
-            templeName: "Manti Utah",
-            location: "Manti, Utah, United States",
-            dedicated: "1888, May, 21",
+            templeName: "Apia Samoa Temple",
+            location: "Vaitele Street,Pesega, Apia",
+            dedicated: "4 ,September, 2005 ",
             area: 74792,
-            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manti-utah/400x250/manti-temple-768192-wallpaper.jpg"
+            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/Apia-Samoa/400x250/Apia_Samoa_Temple-768192-wallpaper.jpg"
         },
         {
-            templeName: "Payson Utah",
-            location: "Payson, Utah, United States",
-            dedicated: "2015, June, 7",
-            area: 96630,
-            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/payson-utah/400x225/payson-utah-temple-exterior-1416671-wallpaper.jpg"
+            templeName: "Bacolod Philippines Temple",
+            location: "Philippines",
+            dedicated: "11 ,December, 2021",
+            area:  26700,
+            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/Bacolod-Philippines/400x225/Bacolod_Philippines_temple-exterior-1416671-wallpaper.jpg"
         },
         {
-            templeName: "Yigo Guam",
-            location: "Yigo, Guam",
-            dedicated: "2020, May, 2",
-            area: 6861,
-            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/yigo-guam/400x250/yigo_guam_temple_2.jpg"
+            templeName: "Bahía Blanca Argentina",
+            location: "Argentina",
+            dedicated: "9, April, 2022 ",
+            area:   19000,
+            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/Bahía_Blanca_Argentina/400x250/Bahía_Blanca_Argentina_temple_2.jpg"
         },
         {
-            templeName: "Washington D.C.",
-            location: "Kensington, Maryland, United States",
-            dedicated: "1974, November, 19",
-            area: 156558,
-            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/washington-dc/400x250/washington_dc_temple-exterior-2.jpeg"
+            templeName: "Dallas Texas .",
+            location: "Texas, United States",
+            dedicated: " 24,October, 1984",
+            area: 44207,
+            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/Dallas-Texas/400x250/Dallas_Texas_temple-exterior-2.jpeg"
         },
         {
-            templeName: "Lima Perú",
-            location: "Lima, Perú",
-            dedicated: "1986, January, 10",
-            area: 9600,
-            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/lima-peru/400x250/lima-peru-temple-evening-1075606-wallpaper.jpg"
+            templeName: "Davao Philippines ",
+            location: "Philippines,Barangay Ma-a ",
+            dedicated: "14 ,November ,2020 ",
+            area:  18450,
+            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/Davao-Philippines/400x250/Davao_Philippines_Temple-exterior-1075606-wallpaper.jpg"
         },
         {
-            templeName: "Mexico City Mexico",
-            location: "Mexico City, Mexico",
-            dedicated: "1983, December, 2",
-            area: 116642,
-            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
+            templeName: "Denver Colorado",
+            location: "Centennial, Colorado, United States",
+            dedicated: "28 October 1986",
+            area: 29117,
+            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/Denver-Colorado/400x250/Denver_Colorado_temple-exterior-1518361-wallpaper.jpg"
         },
         {
-            templeName: "Salt Lake Utah",
-            location: "Salt Lake City, Utah, United States",
-            dedicated: "1893, April, 6",
-            area: 253015,
-            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake-city-utah/2018/400x250/slctemple7.jpg"
+            templeName: "Elko Nevada ",
+            location: "Elko, Nevada,United States ",
+            dedicated: "7, May ,2022",
+            area: 5133,
+            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/Elko-Nevada/400x250/slctemple7.jpg"
         },
         {
-            templeName: "Provo City Center",
-            location: "Provo, Utah, United States",
-            dedicated: "2016, March, 20",
-            area: 85760,
-            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/provo-city-center/2018/400x250/Provo-City-Center-Temple01.jpg"
+            templeName: "Edmonton Alberta",
+            location: "Edmonton, Alberta,Canada",
+            dedicated: "27, February, 1999",
+            area: 10700,
+            imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/Edmonton-Alberta/2018/400x250/Edmonton_Alberta_Temple01.jpg"
         },
         {
-            templeName: "Nairobi Kenya Temple",
-            location: "Nairobi, Kenya, Africa",
-            dedicated: "2024, March, 3",
-            area: 19184,
-            imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/nairobi-kenya-temple/nairobi-kenya-temple-20358-main.jpg"
+            templeName: "Sacramento California Temple",
+            location: " Rancho Cordova, California,United States",
+            dedicated: " 3, September, 2006",
+            area: 19500,
+            imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/Sacramento-California-Temple/Sacramento-California-Temple-20358-main.jpg"
         }
     ];
 
