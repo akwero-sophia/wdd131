@@ -99,58 +99,110 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    // Render temples dynamically
-    const renderTemples = (temples) => {
-        const gallery = document.getElementById("temple-gallery");
-        gallery.innerHTML = ""; // Clear current content
+// DOM elements
+const templeContainer = document.getElementById('temple-cards');
+const navLinks = document.querySelectorAll('nav a');
 
-        const isSmallScreen = window.innerWidth <= 768; // Detect small screens
+// Function to create temple card
+function createTempleCard(temple) {
+    const card = document.createElement('div');
+    card.className = 'temple-card';
+    
+    card.innerHTML = `
+        <figure>
+            <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
+            <figcaption>
+                <h3>${temple.templeName}</h3>
+                <p><strong>Location:</strong> ${temple.location}</p>
+                <p><strong>Dedicated:</strong> ${new Date(temple.dedicated).toLocaleDateString()}</p>
+                <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
+            </figcaption>
+        </figure>
+    `;
+    
+}
+];
 
-        temples.forEach((temple, index) => {
-            const card = document.createElement("div");
-            card.classList.add("card");
-            card.innerHTML = `
-                <img 
-                    src="${temple.imageUrl}" 
-                    alt="${temple.templeName}" 
-                    loading="${isSmallScreen && index === 0 ? 'eager' : 'lazy'}" 
-                    width="400" 
-                    height="250"> <!-- Explicit dimensions to prevent layout shifts -->
-                <div class="caption">
-                    <h3>${temple.templeName}</h3>
-                    <p><strong>Location:</strong> ${temple.location}</p>
-                    <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
-                    <p><strong>Size:</strong> ${temple.area.toLocaleString()} sq ft</p>
-                </div>
-            `;
-            gallery.appendChild(card);
-        });
-    };
+// DOM elements
+const templeContainer = document.getElementById('temple-cards');
+const navLinks = document.querySelectorAll('nav a');
 
-    // Filter temples based on criteria
-    const filterTemples = (criteria) => {
-        let filteredTemples = temples;
+// Function to create temple card
+function createTempleCard(temple) {
+    const card = document.createElement('div');
+    card.className = 'temple-card';
+    
+    card.innerHTML = `
+        <figure>
+            <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
+            <figcaption>
+                <h3>${temple.templeName}</h3>
+                <p><strong>Location:</strong> ${temple.location}</p>
+                <p><strong>Dedicated:</strong> ${new Date(temple.dedicated).toLocaleDateString()}</p>
+                <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
+            </figcaption>
+        </figure>
+    `;
+    
+    return card;
+}
 
-        if (criteria === "old") {
-            filteredTemples = temples.filter(temple => parseInt(temple.dedicated.split(",")[0]) < 1900);
-        } else if (criteria === "new") {
-            filteredTemples = temples.filter(temple => parseInt(temple.dedicated.split(",")[0]) > 2000);
-        } else if (criteria === "large") {
-            filteredTemples = temples.filter(temple => temple.area > 90000);
-        } else if (criteria === "small") {
-            filteredTemples = temples.filter(temple => temple.area < 10000);
+// Function to display temples
+function displayTemples(filteredTemples) {
+    templeContainer.innerHTML = '';
+    filteredTemples.forEach(temple => {
+        templeContainer.appendChild(createTempleCard(temple));
+    });
+}
+
+// Filter functions
+function filterOld() {
+    return temples.filter(temple => new Date(temple.dedicated).getFullYear() < 1900);
+}
+
+function filterNew() {
+    return temples.filter(temple => new Date(temple.dedicated).getFullYear() > 2000);
+}
+
+function filterLarge() {
+    return temples.filter(temple => temple.area > 90000);
+}
+
+function filterSmall() {
+    return temples.filter(temple => temple.area < 10000);
+}
+
+// Event listeners for navigation
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Remove active class from all links
+        navLinks.forEach(l => l.classList.remove('active'));
+        
+        // Add active class to clicked link
+        e.target.classList.add('active');
+        
+        // Filter based on clicked link
+        switch(e.target.textContent.toLowerCase()) {
+            case 'old':
+                displayTemples(filterOld());
+                break;
+            case 'new':
+                displayTemples(filterNew());
+                break;
+            case 'large':
+                displayTemples(filterLarge());
+                break;
+            case 'small':
+                displayTemples(filterSmall());
+                break;
+            case 'home':
+            default:
+                displayTemples(temples);
         }
-
-        renderTemples(filteredTemples);
-    };
-
-    // Event listeners for navigation links
-    document.getElementById("home").addEventListener("click", () => renderTemples(temples));
-    document.getElementById("old").addEventListener("click", () => filterTemples("old"));
-    document.getElementById("new").addEventListener("click", () => filterTemples("new"));
-    document.getElementById("large").addEventListener("click", () => filterTemples("large"));
-    document.getElementById("small").addEventListener("click", () => filterTemples("small"));
-
-    // Initial render of all temples
-    renderTemples(temples);
+    });
 });
+
+// Initial display of all temples
+displayTemples(temples);
