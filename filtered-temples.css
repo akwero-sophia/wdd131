@@ -1,4 +1,4 @@
-/* Base styles and CSS reset */
+ /* Base styles and CSS reset */
 :root {
     --primary-color: #0f4c75;
     --secondary-color: #1e40af;
@@ -236,6 +236,6 @@ footer span {
     }
 
     header h1 {
-        font-size: 2.5rem; 
+        font-size: 2.5rem; /* Larger font size for header */
     }
 }
