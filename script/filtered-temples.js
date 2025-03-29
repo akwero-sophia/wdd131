@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
 // DOM elements
-const templeContainer = document.getElementById('temple-cards');
-const navLinks = document.querySelectorAll('nav a');
+const ;templeContainer = document.getElementById('temple-cards');
+const ;navLinks = document.querySelectorAll('nav a');
 
 // Function to create temple card
 function createTempleCard(temple) {
@@ -204,4 +204,4 @@ navLinks.forEach(link => {
 });
 
 // Initial display of all temples
-displayTemples(temples)}
+displayTemples(temples);
