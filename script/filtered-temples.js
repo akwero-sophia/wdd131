@@ -120,8 +120,7 @@ function createTempleCard(temple) {
         </figure>
     `;
     
-}
-];
+};
 
 // DOM elements
 const templeContainer = document.getElementById('temple-cards');
@@ -205,4 +204,4 @@ navLinks.forEach(link => {
 });
 
 // Initial display of all temples
-displayTemples(temples);
+displayTemples(temples)}
